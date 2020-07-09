@@ -1,8 +1,21 @@
 import React, { Component } from 'react'
-
+import { TimelineLite, CSSPlugin } from "gsap/all";
 
 export default class Toolbox extends Component {
-   
+    constructor(props) {
+        super(props);
+    
+        console.log(this.props)
+        	// logo container
+		this.toolKit = null;
+		// logo tween
+		this.toolKitTween = null;
+    }
+    componentDidMount(){
+		// create logo tween
+		this.toolKitTween = new TimelineLite({ paused: false }).to(this.toolKit, 0.5, {autoAlpha:1, y: -700, delay: 0.5});
+    
+	}
     listCard=()=>{
         
     }
@@ -22,7 +35,7 @@ export default class Toolbox extends Component {
     //    });
     
         return (
-            <div className='toolbox'>
+            <div className='toolbox' ref={ img => this.toolKit = img}>
              {
                  this.props.items.map((t)=>{
                      return(

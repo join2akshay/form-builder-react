@@ -3,7 +3,9 @@ import Preview from '../drag-section/Preview.js'
 import Toolbox from '../drop-section/Toolbox'
 import './layout.css'
 import {MainContext} from '../../ContextAPI'
-import PreviewOut from '../preview/Preview'
+import { TimelineLite, CSSPlugin } from "gsap/all";
+
+
 
 // import NewWindow from 'react-new-window'
 export default class Layout extends Component {
@@ -11,6 +13,10 @@ export default class Layout extends Component {
         super(props);
     
         console.log(this.props)
+        	// logo container
+		this.exportBtn = null;
+		// logo tween
+		this.exportBtnTween = null;
     }
     
     state={
@@ -64,6 +70,11 @@ export default class Layout extends Component {
     //         <PreviewOut Preview={preview}/>
     //     )
     // }
+    componentDidMount(){
+		// create logo tween
+		this.exportBtnTween = new TimelineLite({ paused: false }).to(this.exportBtn, 0.5, {autoAlpha:1, x: 400, delay: 0.5});
+    
+	}
     render() {
        
         return (
@@ -80,7 +91,7 @@ export default class Layout extends Component {
             
             <div className='row'>
                 <div className='column'>
-                <button className='black-button' onClick={()=>console.log('hi')}>
+                <button ref={ img => this.exportBtn = img} className='black-button' onClick={()=>console.log('hi')}>
                         Export
                     </button>
                     <button className='blue-button' onClick={
