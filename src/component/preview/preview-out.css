@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Varela');
+@import url('https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i');
+body {
+  background-color: #ededed;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Google Sans', sans-serif;
+}
+body .banner {
+  height: 25vh;
+  background-color: #6a32b9;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.preview-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(40vw - 6em);
+  background: white;
+  position: absolute;
+  left: 30vw;
+  top: 10vh;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  padding: 1em 3em 3em 3em;
+}
+.preview-form p {
+  margin-top: 0;
+}
+.preview-form .input-group.active label {
+  color: #6a32b9;
+}
+.preview-form .input-group {
+  margin-top: 2em;
+}
+.preview-form .input-group textarea {
+  heihgt: 3em;
+}
+.preview-form .input-group input[type=text], .preview-form .input-group input[type=email], .preview-form .input-group textarea, .preview-form .input-group input[type=number],.preview-form .input-group input[type=date]{
+  border: none;
+  font-size: 12px;
+  padding: 1em 0;
+  border-bottom: 2px solid #dbdbdb;
+  width: calc(100% - 2em);
+  transition: all 0.5s ease-out;
+}
+.preview-form .input-group input[type=text]:focus, .preview-form .input-group input[type=email]:focus, .preview-form .input-group textarea:focus,.preview-form .input-group input[type=number]:focus,.preview-form .input-group input[type=date]:focus {
+  outline: none;
+  border-bottom: 2px solid #6a32b9;
+}
+.preview-form .input-group input[type=text]:disabled, .preview-form .input-group input[type=email]:disabled, .preview-form .input-group textarea:disabled,.preview-form .input-group input[type=number]:disabled,.preview-form .input-group input[type=date]:disabled {
+  border-bottom: 2px dotted #dbdbdb;
+  cursor: not-allowed;
+}
+.preview-form .input-group .warning {
+  font-size: 10px;
+  padding-bottom: 2em;
+}
+.preview-form .btn {
+  border: 0px;
+  margin-top: 1em;
+  background-color: #5e7ff5;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+}
+.preview-form .btn:hover {
+  cursor: pointer;
+  background-color: #5b97ff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4), 0 4px 20px 0 rgba(0, 0, 0, 0.2);
+}
+.preview-form .btn:active {
+  background-color: #5e7ff5;
+}

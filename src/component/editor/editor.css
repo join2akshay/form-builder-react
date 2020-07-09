@@ -1,0 +1,59 @@
+.editor{
+position: absolute;
+height: 90vh;
+width: 60vw;
+background-color: aliceblue;
+}
+.hide{
+    transform: translate3d(-100vw,0,0); 
+    transition: 0.8s;
+}
+.show{
+    transform: translateZ(0);
+    overflow: hidden;
+    box-shadow: 3px -1px 5px #d5b5b5;
+    border-radius: 0px 20px;
+   
+    transition: 0.8s;
+}
+.close{
+    position: absolute;
+}
+.row{
+    padding: 5px;
+}
+.row::after{
+   content: "";
+   clear: both;
+   display: table
+}
+
+.col-3{
+    float: left;
+    width:25% ;
+ 
+}
+.col-5{
+    width: 75%;
+    float: left;
+}
+.p-top-20{
+    padding-top: 20px;
+}
+.editor-form{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: calc(40vw - 2em);
+    background: white;
+ 
+    left: 5vw;
+    top: 10vh;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    padding: 1em 3em 3em 3em;
+}

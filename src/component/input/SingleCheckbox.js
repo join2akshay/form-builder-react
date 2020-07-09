@@ -1,0 +1,44 @@
+import React, { Component } from 'react'
+
+export default class SingleCheckbox extends Component {
+    state={
+        show:false
+    }
+    render() {
+   
+        return (
+            <div className='input-box' onMouseEnter={()=>this.setState({show:!this.state.show})} onMouseLeave={()=>this.setState({show:!this.state.show})}>
+                {/* <div  className={`edit-del-${this.state.show}  grid-container`} > */}
+                <div  className={`edit-del-${this.state.show} grid-container`} >
+                <div className='float-left'>
+                <p style={{float:'left'}} className='item-name'>{this.props.name}</p>
+                        </div>
+                        <div className='float-right'>
+                        <p onClick={this.props.toggleMenu} id={this.props.id} data-value={this.props.name} className='blue-button preview-button'> edit</p>
+                <p onClick={this.props.toggleDelete} id={this.props.id} data-value={this.props.name} className='black-button preview-button'> delete</p>
+
+                    </div>
+                
+                
+              
+               
+                </div>
+                <br/>
+            <div className='single-checkbox'>
+                <div className='input-bo'>
+                <section title=".squaredThree" className='flex mg-top-15'>
+  
+    <div className="squaredThree">
+      <input type="checkbox" value="None" id="squaredThree" name="check"/>
+      <label htmlFor="squaredThree" className='check-label'></label>
+    </div>
+    <label htmlFor="squaredThree" className='check-label'>{this.props.label}</label>
+   
+  </section>
+                    
+                </div>
+            </div>
+            </div>
+        )
+    }
+}
