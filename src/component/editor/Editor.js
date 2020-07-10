@@ -2,30 +2,34 @@ import React, { Component } from 'react'
 import './editor.css'
 import {MainContext} from '../../ContextAPI'
 
-
+const initialState={
+    label:'',
+    placeholder:'',
+    required:false,
+    radioValue:'',
+    pdf:false,
+    png:false,
+    doc:false,   
+    min:'',
+    max:'' ,
+    DDMMYYYY:false,
+    MMDDYYYY:false,
+    YYYYDDMM:false,
+    option:''
+}
 export default class Editor extends Component {
     static contextType=MainContext;
     constructor(props, context) {
         super(props, context);
        
-        this.state={
-            label:'',
-            placeholder:'',
-            required:false,
-            radioValue:'',
-            pdf:false,
-            png:false,
-            doc:false,   
-            min:'',
-            max:'' ,
-            DDMMYYYY:false,
-            MMDDYYYY:false,
-            YYYYDDMM:false,
-            option:''
-        }
+        this.state=initialState
       
     }
      
+    onClear=(e)=>{
+        this.setState(initialState)
+        this.props.toggleClose(e)
+    }
    
     handleSubmit=(data)=>{
         // console.log(this.state.validation)
@@ -163,7 +167,7 @@ export default class Editor extends Component {
            
                 <div className='col-5'>
                     <div className='text'>
-                        <input type='text' name='label' onChange={this.onChange}/>
+                        <input type='text' name='label' value={this.state.label} onChange={this.onChange}/>
                         
                     </div>
                 </div>
@@ -750,25 +754,12 @@ export default class Editor extends Component {
 
            
                 
-           <div className='row'>
-
-           <div className='button col-3'>
-                <input type='reset' className='button bg-black' onClick={this.props.toggleClose} value='Close'/>
-                    {/* Close
-                </button> */}
-            </div>
-
-           <div className='button col-3'>
-                <button className='blue-button' onClick={()=>this.handleSubmit(this.context)}>
-                    Submit
-                </button>
-            </div>
-           </div>
+          
            </form>
-           <div className='row'>
+           <div className='row' style={{paddingLeft:'15rem'}}>
 
 <div className='button col-3'>
-     <input type='reset' className='button bg-black' onClick={this.props.toggleClose} value='Close'/>
+     <input type='reset' className='button bg-black' onClick={this.onClear} value='Close'/>
          {/* Close
      </button> */}
  </div>
