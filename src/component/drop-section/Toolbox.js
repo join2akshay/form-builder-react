@@ -5,7 +5,7 @@ export default class Toolbox extends Component {
     constructor(props) {
         super(props);
     
-        console.log(this.props)
+        // console.log(this.props)
         	// logo container
 		this.toolKit = null;
 		// logo tween

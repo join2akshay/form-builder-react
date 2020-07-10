@@ -50,7 +50,7 @@ background-color: aliceblue;
     justify-content: center;
     width: calc(40vw - 2em);
     background: white;
- 
+    margin:5rem auto;
     left: 5vw;
     top: 10vh;
     -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.2);

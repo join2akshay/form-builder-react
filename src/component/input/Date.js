@@ -1,15 +1,23 @@
 import React, { Component } from 'react'
+import { TimelineLite } from 'gsap/all'
 
 export default class Date extends Component {
-    state={
-        show:false
+    constructor(props) {
+        super(props)
+    
+        this.state={
+            show:false
+        }
+       
     }
+ 
+    
     render() {
         return (
             <div>
              <div>
                 {/* <div className='text-input input-box'> */}
-                <div className='input-box' onMouseEnter={()=>this.setState({show:true})} onMouseLeave={()=>this.setState({show:false})}>
+                <div className='input-box' ref={ btn => this.deleteAni = btn} onMouseEnter={()=>this.setState({show:true})} onMouseLeave={()=>this.setState({show:false})}>
                 <div  className={`edit-del-${this.state.show} grid-container`} >
                 <div className='float-left'>
                 <p style={{float:'left'}} className='item-name'>{this.props.name}</p>

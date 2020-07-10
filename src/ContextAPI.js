@@ -96,7 +96,7 @@ export default class MainProvider extends Component {
       }
       updatePreviewViaEditorForText(id,allData){
      
-       console.log('text')
+      //  console.log('text')
         var preview = [...this.state.preview];
         var index = preview.findIndex(obj => obj.id == id);
      
@@ -107,7 +107,7 @@ export default class MainProvider extends Component {
      }
      updatePreviewViaEditorForRadio(id,allData){
      
-      console.log('radio')
+      // console.log('radio')
       console.log(allData.required)
       var preview = [...this.state.preview];
       var index = preview.findIndex(obj => obj.id == id);
@@ -224,7 +224,7 @@ updatePreviewViaEditorForParagraph(id,allData){
     
     render() {
   
-      console.log(this.state.preview)
+      // console.log(this.state.preview)
      
         return (
           <MainContext.Provider value={{...this.state,
