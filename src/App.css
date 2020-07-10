@@ -202,20 +202,37 @@ input[type=submit]:hover {
 .check-label{
   margin-left: 10px;
 }
+/* .row .column h2{
+  position: absolute;
+  top: 500px;
+} */
 /* Button */
-.black-button{
-  background-color: black;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    position: absolute;
-    left: 0;
-    opacity: 0;
+.button bg-black{
   
-}
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
 
+
+}
+.button{
+  
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+
+
+}
+.bg-black{
+  background-color: black;
+}
+.bg-blue{
+  background-color: #007bff;
+}
 .blue-button{
   margin-left: 2px;
   background-color: #007bff;
@@ -224,6 +241,38 @@ input[type=submit]:hover {
   color: white;
   padding: 10px;
   cursor: pointer;
+}
+.export-button{
+
+  position: absolute;
+  left: 0;
+  opacity: 0;
+
+}
+
+.view-button{
+
+  position: absolute;
+  right: 0;
+  opacity: 0;
+
+}
+.mg-1rem{
+  margin: 1rem;
+}
+.mg-bottom-2rem{
+  margin-bottom: 2rem;
+}
+.drop-container{
+  position: absolute;
+    width: 60vw;
+    height: 90vh;
+    left: 0;
+    top: 10;
+    background-color: #ffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* edit hover */

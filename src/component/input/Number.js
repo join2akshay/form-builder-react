@@ -14,8 +14,8 @@ export default class Number extends Component {
                 <p style={{float:'left'}} className='item-name'>{this.props.name}</p>
                         </div>
                         <div className='float-right'>
-                        <p onClick={this.props.toggleMenu} id={this.props.id} data-value={this.props.name} className='blue-button preview-button'> edit</p>
-                <p onClick={this.props.toggleDelete} id={this.props.id} data-value={this.props.name} className='black-button preview-button'> delete</p>
+                        <p onClick={this.props.toggleMenu} id={this.props.id} data-value={this.props.name} className='blue-button preview-button'> Edit</p>
+                <p onClick={this.props.toggleDelete} id={this.props.id} data-value={this.props.name} className='button bg-black preview-button'> Delete</p>
 
                     </div>
                 

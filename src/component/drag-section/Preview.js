@@ -170,7 +170,9 @@ export default class Preview extends Component {
                        
                        })
                        :
-                       'drop something'
+                       <div className='drop-container'>
+                         <div className='content-center'>Drop Something</div>
+                       </div> 
                    }
 
                    {

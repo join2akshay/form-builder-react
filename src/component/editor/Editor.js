@@ -753,7 +753,7 @@ export default class Editor extends Component {
            <div className='row'>
 
            <div className='button col-3'>
-                <input type='reset' className='black-button' onClick={this.props.toggleClose} value='Close'/>
+                <input type='reset' className='button bg-black' onClick={this.props.toggleClose} value='Close'/>
                     {/* Close
                 </button> */}
             </div>
@@ -768,7 +768,7 @@ export default class Editor extends Component {
            <div className='row'>
 
 <div className='button col-3'>
-     <input type='reset' className='black-button' onClick={this.props.toggleClose} value='Close'/>
+     <input type='reset' className='button bg-black' onClick={this.props.toggleClose} value='Close'/>
          {/* Close
      </button> */}
  </div>

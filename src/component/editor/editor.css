@@ -21,6 +21,7 @@ background-color: aliceblue;
 }
 .row{
     padding: 5px;
+    display: flex;
 }
 .row::after{
    content: "";

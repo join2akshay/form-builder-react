@@ -14,9 +14,13 @@ export default class Layout extends Component {
     
         console.log(this.props)
         	// logo container
-		this.exportBtn = null;
+        this.exportBtn = null;
+        this.previewBtn=null
+        this.logo=null;
 		// logo tween
-		this.exportBtnTween = null;
+        this.exportBtnTween = null;
+        this.previewBtnTween = null;
+        this.logoTween=null;
     }
     
     state={
@@ -73,6 +77,13 @@ export default class Layout extends Component {
     componentDidMount(){
 		// create logo tween
 		this.exportBtnTween = new TimelineLite({ paused: false }).to(this.exportBtn, 0.5, {autoAlpha:1, x: 400, delay: 0.5});
+        this.previewBtnTween = new TimelineLite({ paused: false }).to(this.previewBtn, 0.5, {autoAlpha:1, x: -800, delay: 0.5});
+        this.logoTween = new TimelineLite({ paused: false }).from(this.logo1, 0.5, {delay:1,
+            y:20,
+            opacity:0,});
+            this.logoTween = new TimelineLite({ paused: false }).from(this.logo2, 0.5, {delay:1,
+                y:20,
+                opacity:0,});
     
 	}
     render() {
@@ -90,11 +101,22 @@ export default class Layout extends Component {
            <div  className='App'>
             
             <div className='row'>
-                <div className='column'>
-                <button ref={ img => this.exportBtn = img} className='black-button' onClick={()=>console.log('hi')}>
+            <div className='column flex'>
+            <h2 ref={ logo => this.logo1 = logo}>
+                        From
+                    </h2>
+                    <h2 >
+                        -
+                    </h2>
+                    <h2 ref={ logo => this.logo2 = logo}>
+                       Builder
+                    </h2>
+            </div>
+                <div className='column mg-bottom-2rem mg-1rem'>
+                <button ref={ btn => this.exportBtn = btn} className='button bg-black export-button' onClick={()=>console.log('hi')}>
                         Export
                     </button>
-                    <button className='blue-button' onClick={
+                    <button ref={ btn => this.previewBtn = btn} className='button bg-blue view-button' onClick={
                       this.openWindow
                    
                     
