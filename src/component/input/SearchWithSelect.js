@@ -29,7 +29,7 @@ export default class SearchWithSelect extends Component {
         console.log('hi search')
         return (
             <div className='search-with-select'>
-                <div className='input-box' onMouseEnter={()=>this.setState({show:!this.state.show})} onMouseLeave={()=>this.setState({show:!this.state.show})}>
+                <div className='input-box' onMouseEnter={()=>this.setState({show:true})} onMouseLeave={()=>this.setState({show:false})}>
                 <div  className={`edit-del-${this.state.show} grid-container`} >
                 <div className='float-left'>
                 <p style={{float:'left'}} className='item-name'>{this.props.name}</p>

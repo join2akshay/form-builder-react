@@ -7,7 +7,7 @@ export default class SingleCheckbox extends Component {
     render() {
    
         return (
-            <div className='input-box' onMouseEnter={()=>this.setState({show:!this.state.show})} onMouseLeave={()=>this.setState({show:!this.state.show})}>
+            <div className='input-box' onMouseEnter={()=>this.setState({show:true})} onMouseLeave={()=>this.setState({show:false})}>
                 {/* <div  className={`edit-del-${this.state.show}  grid-container`} > */}
                 <div  className={`edit-del-${this.state.show} grid-container`} >
                 <div className='float-left'>
@@ -26,7 +26,7 @@ export default class SingleCheckbox extends Component {
                 <br/>
             <div className='single-checkbox'>
                 <div className='input-bo'>
-                <section title=".squaredThree" className='flex mg-top-15'>
+                <section title=".squaredThree" className='flex'>
   
     <div className="squaredThree">
       <input type="checkbox" value="None" id="squaredThree" name="check"/>

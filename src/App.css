@@ -152,7 +152,7 @@ input[type=submit]:hover {
   position: relative;
   /* margin: 20px auto; */
   margin-right: 15px;
-  margin-left: 120px;
+  margin-left: 13rem;
 }
 .flex{
   display: flex;
