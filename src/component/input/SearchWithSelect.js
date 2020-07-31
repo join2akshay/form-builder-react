@@ -8,7 +8,7 @@ export default class SearchWithSelect extends Component {
         currentEle:''
     }
     filterFunction=()=> {
-        var input, filter, ul, li, a, i;
+        var input, filter, a, i;
         input = document.getElementById("myInput");
         filter = input.value.toUpperCase();
         let div = document.getElementById("myDropdown");
@@ -61,7 +61,7 @@ export default class SearchWithSelect extends Component {
     {
                       this.props.options===undefined ? (
                           
-                        <a onClick={this.myFunction}>Option 1</a>
+                        <a href='#' onClick={this.myFunction}>Option 1</a>
                  
                   
 
@@ -70,7 +70,7 @@ export default class SearchWithSelect extends Component {
                       (
                           this.props.options.map((item)=>{
                               return (
-                                <a onClick={this.myFunction}>{item}</a>
+                                <a href='#' onClick={this.myFunction}>{item}</a>
                               )
                           })
                       )

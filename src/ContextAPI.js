@@ -14,15 +14,15 @@ export default class MainProvider extends Component {
         this.state={
             default_data: [
               {name:'Single Checkbox', category:'wip', icon:'fa-check-circle-o'},
-              {name:'Select Image', category:'wip', icon:'fa-file-image-o'},
-              {name:'Radio List', category:'wip',icon:'fa-stop-circle-o'},
+              {name:'File Upload', category:'wip', icon:'fa-file-image-o'},
+              {name:'Radio', category:'wip',icon:'fa-stop-circle-o'},
               {name:'Select', category:'wip',icon:'fa-chevron-down'},
                 {name:'Paragraph', category:'wip', icon:'fa-paragraph'},
                 {name:'Text Input', category:'wip',icon:'fa-keyboard-o'},
                 {name:'Number Input', category:'wip',icon:'fa-plus'},
                 {name:"Email",category:"wip",icon:'fa-envelope'},
                 {name:"Date", category:"wip",icon:'fa-calendar'},
-                {name:"Search with select", category:"wip",icon:'fa-chevron-down'},
+                // {name:"Search with select", category:"wip",icon:'fa-chevron-down'},
               ],
               preview:[],
               newWindow:false,
@@ -64,12 +64,15 @@ export default class MainProvider extends Component {
         if(currentEle==='Single Checkbox'){
           this.updatePreviewViaEditorForRadio(id,allData)
         }
+        if(currentEle==='Radio'){
+          this.updatePreviewViaEditorForRadio(id,allData)
+        }
         else if(currentEle==='Text Input')
         {
 
           this.updatePreviewViaEditorForText(id,allData)
         }
-        else if(currentEle==='Select Image')
+        else if(currentEle==='File Upload')
         {
 
           this.updatePreviewViaEditorForFile(id,allData,fileFormat)
@@ -98,7 +101,7 @@ export default class MainProvider extends Component {
      
       //  console.log('text')
         var preview = [...this.state.preview];
-        var index = preview.findIndex(obj => obj.id == id);
+        var index = preview.findIndex(obj => obj.id === parseInt(id));
      
         preview[index].placeholder = allData.placeholder;
         preview[index].required = allData.required;
@@ -107,10 +110,10 @@ export default class MainProvider extends Component {
      }
      updatePreviewViaEditorForRadio(id,allData){
      
-      // console.log('radio')
-      console.log(allData.required)
+      console.log(allData)
+      
       var preview = [...this.state.preview];
-      var index = preview.findIndex(obj => obj.id == id);
+      var index = preview.findIndex(obj => obj.id === parseInt(id));
       preview[index].required = allData.required;
       preview[index].label=allData.label;
       this.setState({preview});
@@ -121,7 +124,7 @@ export default class MainProvider extends Component {
     console.log('file')
     
     var preview = [...this.state.preview];
-    var index = preview.findIndex(obj => obj.id == id);
+    var index = preview.findIndex(obj => obj.id === parseInt(id));
     preview[index].required = allData.required;
     preview[index].label=allData.label;
    
@@ -133,15 +136,18 @@ export default class MainProvider extends Component {
  
  }
  updatePreviewViaEditorForNumber=(id,allData,fileFormat)=>{
+
+  console.log(id,allData,fileFormat)
    
   var preview = [...this.state.preview];
-  var index = preview.findIndex(obj => obj.id == id);
+  var index = preview.findIndex(obj => obj.id === parseInt(id));
   preview[index].required = allData.required;
+  preview[index].placeholder = allData.placeholder;
   preview[index].label=allData.label;
   preview[index].validation=allData.validation;
   preview[index].format={...fileFormat}
   
-  this.setState({preview});
+  this.setState({preview},()=>console.log(this.state));
 
  }
  updatePreviewViaEditorForDate(id,allData,fileFormat){
@@ -149,7 +155,7 @@ export default class MainProvider extends Component {
   console.log('file')
   
   var preview = [...this.state.preview];
-  var index = preview.findIndex(obj => obj.id == id);
+  var index = preview.findIndex(obj => obj.id === parseInt(id));
   preview[index].required = allData.required;
   preview[index].label=allData.label;
  
@@ -162,13 +168,13 @@ export default class MainProvider extends Component {
 }
 updatePreviewViaEditorForSelect(id,allData,fileFormat){
      
-  console.log('select')
-  console.log(allData)
+  // console.log('select')
+  // console.log(allData)
   let option=allData.option
   let sliptData=option.split(',')
   
   var preview = [...this.state.preview];
-  var index = preview.findIndex(obj => obj.id == id);
+  var index = preview.findIndex(obj => obj.id === parseInt(id));
   preview[index].required = allData.required;
   preview[index].label=allData.label;
  
@@ -189,7 +195,7 @@ updatePreviewViaEditorForSearchWithSelect(id,allData,fileFormat){
   let sliptData=option.split(',')
   
   var preview = [...this.state.preview];
-  var index = preview.findIndex(obj => obj.id == id);
+  var index = preview.findIndex(obj => obj.id === parseInt(id));
   preview[index].required = allData.required;
   preview[index].label=allData.label;
  
@@ -206,14 +212,14 @@ updatePreviewViaEditorForParagraph(id,allData){
      
   console.log('Paragraph')
    var preview = [...this.state.preview];
-   var index = preview.findIndex(obj => obj.id == id);
+   var index = preview.findIndex(obj => obj.id === parseInt(id));
    preview[index].label=allData.label;
    this.setState({preview});
 }
      
  deleteElement(id){
    let preview = this.state.preview
-  var index = preview.findIndex(obj => obj.id == id);
+  var index = preview.findIndex(obj => obj.id === parseInt(id));
   if (index > -1) {
     preview.splice(index, 1);
   }
@@ -247,7 +253,7 @@ export {MainProvider, MainConsumer, MainContext};
 
 //   {name:'Single Checkbox', category:'wip', icon:'fa-check-circle-o'},
 //   {name:'Checkbox List', category:'wip', icon:'fa-th-list'},
-//   {name:'Select Image', category:'wip', icon:'fa-file-image-o'},
+//   {name:'File Upload', category:'wip', icon:'fa-file-image-o'},
 //   {name:'Multi-Select', category:'wip',icon:'fa-dot-circle-o'},
 //   {name:'Radio List', category:'wip',icon:'fa-stop-circle-o'},
 //   {name:'Select', category:'wip',icon:'fa-chevron-down'},

@@ -11,7 +11,7 @@ import FileUpload from '../input/FileUpload';
 import Email from '../input/Email';
 import Date from '../input/Date';
 import Select from '../input/Select';
-import SearchWithSelect from '../input/SearchWithSelect';
+// import SearchWithSelect from '../input/SearchWithSelect';
 import './preview.css'
 
 
@@ -54,6 +54,7 @@ export default class Preview extends Component {
 
      
     toggleClose=(e)=> {
+       
      
         
         if(e.target.id){
@@ -87,7 +88,7 @@ export default class Preview extends Component {
           }
     displayElement(item){
        
-        if(item.name=='Label')
+        if(item.name==='Label')
         {
             return(<Label/>)
         }
@@ -95,59 +96,60 @@ export default class Preview extends Component {
         {
             return(
           
-            <TextInput id={item.id} label={item.label} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete} required={item.required}/>
+            <TextInput id={item.id} label={item.label} key={item.id} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete} required={item.required} placeholder={item.placeholder}/>
             )
         }else if(item.name==='Single Checkbox')
         {
             return (
-               <SingleCheckbox id={item.id} label={item.label} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete}/>
+               <SingleCheckbox id={item.id} label={item.label} key={item.id} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete} required={item.required}/>
            
             )
-        }else if(item.name=='Radio List'){
+        }else if(item.name==='Radio'){
             return(
            
-            <Radio id={item.id} label={item.label} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete}/>
+            <Radio id={item.id} label={item.label} key={item.id} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete} required={item.required}/>
            
             )
         }
         else if(item.name=== 'Paragraph'){
             return(
                 
-                <Paragragh id={item.id} label={item.label} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete}/>
+                <Paragragh id={item.id} label={item.label} key={item.id} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete}/>
                 
             )
         } else if(item.name=== 'Number Input'){
             return(
           
-            <Number id={item.id} label={item.label} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete} placeholder={item.placeholder}/>
+            <Number id={item.id} label={item.label} key={item.id} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete} placeholder={item.placeholder} required={item.required}/>
                 
             )
-        } else if(item.name=== 'Select Image'){
+        } else if(item.name=== 'File Upload'){
             return(
           
-            <FileUpload id={item.id} label={item.label} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete}/>
+            <FileUpload id={item.id} label={item.label} key={item.id} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete} required={item.required}/>
            
             )
         }else if(item.name==='Email'){
-           return(  <Email id={item.id} label={item.label} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete} placeholder={item.placeholder}
+           return(  <Email id={item.id} label={item.label} key={item.id} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete} placeholder={item.placeholder} required={item.required}
            />)
         }else if(item.name==='Date')
         {
             return(
-                <Date id={item.id} label={item.label} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete}/>
+                <Date id={item.id} label={item.label} key={item.id} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete} required={item.required}/>
      
             )
         }else if(item.name==='Select')
         {
             return(
-                <Select id={item.id} label={item.label} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete} required={item.required} options={item.option}/>
+                <Select id={item.id} label={item.label} key={item.id} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete} required={item.required} options={item.option}/>
      
             )
-        }else if(item.HtmlName==='Search with select'){
-
-           return( <SearchWithSelect id={item.id} label={item.label} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete} required={item.required} options={item.option}/>
-			)		
         }
+        // else if(item.HtmlName==='Search with select'){
+
+        //    return( <SearchWithSelect id={item.id} label={item.label} toggleMenu={this.toggleMenu} name={item.name} show={this.state.show} toggleDelete={this.toggleDelete} required={item.required} options={item.option}/>
+		// 	)		
+        // }
        else{
            console.log(item)
        }

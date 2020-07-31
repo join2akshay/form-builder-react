@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TimelineLite, CSSPlugin } from "gsap/all";
+import { TimelineLite } from "gsap/all";
 
 export default class Toolbox extends Component {
     constructor(props) {

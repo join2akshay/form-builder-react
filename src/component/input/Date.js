@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { TimelineLite } from 'gsap/all'
 
 export default class Date extends Component {
     constructor(props) {
@@ -21,6 +20,12 @@ export default class Date extends Component {
                 <div  className={`edit-del-${this.state.show} grid-container`} >
                 <div className='float-left'>
                 <p style={{float:'left'}} className='item-name'>{this.props.name}</p>
+                {
+                    this.props.required ? 
+                    (<p style={{float:'left',marginLeft:15}} className='item-name'>required</p>)
+                    :
+                    ''
+                }
                         </div>
                         <div className='float-right'>
                         <p onClick={this.props.toggleMenu} id={this.props.id} data-value={this.props.name} className='blue-button preview-button'> Edit</p>

@@ -48,7 +48,7 @@ export default class Select extends Component {
                       (
                           this.props.options.map((item)=>{
                               return (
-                                <option value="volvo">{item}</option>
+                                <option value="volvo" key={item}>{item}</option>
                               )
                           })
                       )
