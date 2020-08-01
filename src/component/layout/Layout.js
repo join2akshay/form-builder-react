@@ -3,7 +3,7 @@ import Preview from '../drag-section/Preview.js'
 import Toolbox from '../drop-section/Toolbox'
 import './layout.css'
 import {MainContext} from '../../ContextAPI'
-import { TimelineLite } from "gsap/all";
+import { TimelineLite,CSSPlugin } from "gsap/all";
 
 
 
