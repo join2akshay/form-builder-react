@@ -99,7 +99,7 @@ body .banner {
   cursor: pointer;
 }
 
-.btn-file, .btn-large, .btn-flat {
+.btn-file , .btn-large, .btn-flat {
   border: none;
   border-radius: 2px;
   display: inline-block;

@@ -377,7 +377,11 @@ input[type=submit]:hover {
   width: 0px; 
   background: transparent; 
 }
-/* Optional: show position indicator in red */
-/* ::-webkit-scrollbar-thumb {
-  background: #FF0000;
-} */
+/* animation */
+.expbtn{
+  
+  transition: 3s ;
+  transform: translate(400px, 0px);
+  opacity: 1;
+  visibility: inherit;
+}

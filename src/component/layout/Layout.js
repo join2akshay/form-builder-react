@@ -3,8 +3,7 @@ import Preview from '../drag-section/Preview.js'
 import Toolbox from '../drop-section/Toolbox'
 import './layout.css'
 import {MainContext} from '../../ContextAPI'
-import { TimelineLite,CSSPlugin } from "gsap/all";
-
+import { TimelineLite ,CSSPlugin} from "gsap/all";
 
 
 // import NewWindow from 'react-new-window'
@@ -84,6 +83,9 @@ export default class Layout extends Component {
             this.logoTween = new TimelineLite({ paused: false }).from(this.logo2, 0.5, {delay:1,
                 y:20,
                 opacity:0,});
+        // this.exportBtn.current.classList.add(`animation_trigger`);
+        // console.log(this.exportBtn.classList.add('hello'))
+        // this.exportBtn.classList.add('expbtn')
     
     }
     copyToClipboard=()=>{
