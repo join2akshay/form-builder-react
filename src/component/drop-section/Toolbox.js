@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TimelineLite } from "gsap/all";
+// import { TimelineLite } from "gsap/all";
 
 export default class Toolbox extends Component {
     constructor(props) {
@@ -13,7 +13,7 @@ export default class Toolbox extends Component {
     }
     componentDidMount(){
 		// create logo tween
-		this.toolKitTween = new TimelineLite({ paused: false }).to(this.toolKit, 0.5, {autoAlpha:1, y: -700, delay: 0.5});
+		// this.toolKitTween = new TimelineLite({ paused: false }).to(this.toolKit, 0.5, {autoAlpha:1, y: -700, delay: 0.5});
     
 	}
     listCard=()=>{

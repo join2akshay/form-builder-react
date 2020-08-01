@@ -3,7 +3,8 @@ import Preview from '../drag-section/Preview.js'
 import Toolbox from '../drop-section/Toolbox'
 import './layout.css'
 import {MainContext} from '../../ContextAPI'
-import { TimelineLite ,CSSPlugin} from "gsap/all";
+// import { TimelineLite } from "gsap/all";
+// import { Controls, PlayState, Tween } from 'react-gsap';
 
 
 // import NewWindow from 'react-new-window'
@@ -75,14 +76,14 @@ export default class Layout extends Component {
     // }
     componentDidMount(){
 		// create logo tween
-		this.exportBtnTween = new TimelineLite({ paused: false }).to(this.exportBtn, 0.5, {autoAlpha:1, x: 400, delay: 0.5});
-        this.previewBtnTween = new TimelineLite({ paused: false }).to(this.previewBtn, 0.5, {autoAlpha:1, x: -800, delay: 0.5});
-        this.logoTween = new TimelineLite({ paused: false }).from(this.logo1, 0.5, {delay:1,
-            y:20,
-            opacity:0,});
-            this.logoTween = new TimelineLite({ paused: false }).from(this.logo2, 0.5, {delay:1,
-                y:20,
-                opacity:0,});
+		// this.exportBtnTween = new TimelineLite({ paused: false }).to(this.exportBtn, 0.5, {autoAlpha:1, x: 400, delay: 0.5});
+        // this.previewBtnTween = new TimelineLite({ paused: false }).to(this.previewBtn, 0.5, {autoAlpha:1, x: -800, delay: 0.5});
+        // this.logoTween = new TimelineLite({ paused: false }).from(this.logo1, 0.5, {delay:1,
+        //     y:20,
+        //     opacity:0,});
+        //     this.logoTween = new TimelineLite({ paused: false }).from(this.logo2, 0.5, {delay:1,
+        //         y:20,
+        //         opacity:0,});
         // this.exportBtn.current.classList.add(`animation_trigger`);
         // console.log(this.exportBtn.classList.add('hello'))
         // this.exportBtn.classList.add('expbtn')
@@ -113,7 +114,11 @@ export default class Layout extends Component {
            
            : */}
            <div  className='App'>
-            
+           {/* <Controls playState={PlayState.stop}>
+  <Tween to={{ x: '200px', rotation: 180 }} duration={2} ease="back.out(1.7)">
+    <div style={{ width: '100px', height: '100px', background: '#ccc' }} />
+  </Tween>
+</Controls> */}
             <div className='row'>
             <div className='column flex'>
             <h2 ref={ logo => this.logo1 = logo}>
@@ -127,7 +132,7 @@ export default class Layout extends Component {
                     </h2>
             </div>
                 <div className='column mg-bottom-2rem mg-1rem'>
-                <button ref={ btn => this.exportBtn = btn} className='button bg-black export-button' onClick={this.copyToClipboard}>
+                {/* <button ref={ btn => this.exportBtn = btn} className='button bg-black export-button' onClick={this.copyToClipboard}>
                         Export
                     </button>
                     <button ref={ btn => this.previewBtn = btn} className='button bg-blue view-button' onClick={
@@ -135,6 +140,18 @@ export default class Layout extends Component {
                    
                     
                     }>
+                    
+                        Preview
+                    </button> */}
+                    <button ref={ btn => this.exportBtn = btn} className='button bg-black' style={{marginLeft:100,marginRight:100}} onClick={this.copyToClipboard}>
+                        Export
+                    </button>
+                    <button ref={ btn => this.previewBtn = btn} className='button bg-blue' onClick={
+                      this.openWindow
+                   
+                    
+                    }>
+                    
                         Preview
                     </button>
                 </div>
