@@ -94,7 +94,7 @@ export default class Layout extends Component {
         let retrievedData = localStorage.getItem("data");
             navigator.clipboard.writeText(retrievedData)
 
-            var x = document.getElementById("snackbar");
+            var x = document.getElementById("snackbar2");
             x.className = "show";
             setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     
@@ -132,7 +132,7 @@ export default class Layout extends Component {
                     </h2>
             </div>
                 <div className='column mg-bottom-2rem mg-1rem'>
-                {/* <button ref={ btn => this.exportBtn = btn} className='button bg-black export-button' onClick={this.copyToClipboard}>
+                <button ref={ btn => this.exportBtn = btn} className='button bg-black export-button' onClick={this.copyToClipboard}>
                         Export
                     </button>
                     <button ref={ btn => this.previewBtn = btn} className='button bg-blue view-button' onClick={
@@ -142,7 +142,7 @@ export default class Layout extends Component {
                     }>
                     
                         Preview
-                    </button> */}
+                    </button>
                     <button ref={ btn => this.exportBtn = btn} className='button bg-black' style={{marginLeft:100,marginRight:100}} onClick={this.copyToClipboard}>
                         Export
                     </button>
@@ -161,7 +161,7 @@ export default class Layout extends Component {
                     <Toolbox items={this.context.default_data} onDragStart={this.onDragStart} onDragOver={this.onDragOver} onDrop={this.onDrop} />
                 </div>
             </div>
-            <div id="snackbar">Data has benn copied</div>
+            <div id="snackbar2">Data has been copied</div>
             </div>
         )
     }

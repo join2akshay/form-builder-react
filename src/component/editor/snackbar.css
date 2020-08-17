@@ -1,4 +1,4 @@
-#snackbar {
+#snackbar,#snackbar2 {
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;
@@ -15,6 +15,12 @@
   }
   
   #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  #snackbar2.show {
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
